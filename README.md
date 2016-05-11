@@ -1,7 +1,8 @@
 # Zoopla API for Node.js
 
 [![npm](https://img.shields.io/npm/v/zoopla.svg)](https://www.npmjs.com/package/zoopla)  
-[![Build Status](https://travis-ci.org/AnthemisFoundry/zoopla.svg)](https://travis-ci.org/AnthemisFoundry/zoopla)  
+[![Build Status](https://travis-ci.org/AnthemisFoundry/zoopla.svg)](https://travis-ci.org/AnthemisFoundry/zoopla)
+[![Code Climate](https://codeclimate.com/github/AnthemisFoundry/zoopla/badges/gpa.svg)](https://codeclimate.com/github/AnthemisFoundry/zoopla)  
 [![Dependency Status](https://david-dm.org/AnthemisFoundry/zoopla.svg)](https://david-dm.org/AnthemisFoundry/zoopla)
 [![devDependency Status](https://david-dm.org/AnthemisFoundry/zoopla/dev-status.svg)](https://david-dm.org/AnthemisFoundry/zoopla#info=devDependencies)
 
