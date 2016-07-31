@@ -17,6 +17,7 @@ export default class Zoopla {
 
     request({ endpoint, parameters }) {
         const url = `${ZOOPLA_API_HOSTNAME}${ZOOPLA_API_BASE_PATH}${endpoint}`;
+
         const query = {
             ...parameters,
             api_key: this.apiKey,
