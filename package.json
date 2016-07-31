@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://insidersbyte@github.com/AnthemisFoundry/zoopla.git"
+    "url": "git+https://insidersbyte@github.com/InsidersByte/zoopla.git"
   },
   "keywords": [
     "zoopla"
@@ -24,9 +24,9 @@
   "author": "Jonathon Kelly <jonathon.kelly@insidersbyte.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AnthemisFoundry/zoopla/issues"
+    "url": "https://github.com/InsidersByte/zoopla/issues"
   },
-  "homepage": "https://github.com/AnthemisFoundry/zoopla#readme",
+  "homepage": "https://github.com/InsidersByte/zoopla#readme",
   "dependencies": {
     "superagent": "^2.1.0"
   },
