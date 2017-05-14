@@ -4,7 +4,7 @@ import * as constants from './constants';
 
 describe('constants', () => {
   it('has ZOOPLA_API_HOSTNAME', () => {
-    expect(constants.ZOOPLA_API_HOSTNAME).toBe('api.zoopla.co.uk');
+    expect(constants.ZOOPLA_API_HOSTNAME).toBe('https://api.zoopla.co.uk');
   });
 
   it('has ZOOPLA_API_BASE_PATH', () => {
