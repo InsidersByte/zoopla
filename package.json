@@ -8,11 +8,19 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && babel src --out-dir dist",
+    "build": "npm run clean && babel src --out-dir dist --ignore *.test.js",
     "lint": "eslint --ignore-path .gitignore .",
-    "jest": "jest",
-    "test": "npm run lint && npm run jest",
-    "prepublish": "npm run build && npm test"
+    "test": "npm run lint && jest --coverage",
+    "format": "prettier --print-width 160 --trailing-comma es5 --single-quote --write './*.js' './!(dist|flow-typed|node_modules|coverage)/**/*.js'",
+    "prepublish": "npm test && npm run build",
+    "precommit": "lint-staged",
+    "np": "np"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 160 --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -21,31 +29,41 @@
   "keywords": [
     "zoopla"
   ],
-  "author": "Jonathon Kelly <jonathon.kelly@insidersbyte.com>",
+  "author": "Jonathon Kelly <jonathon@insidersbyte.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/InsidersByte/zoopla/issues"
   },
   "homepage": "https://github.com/InsidersByte/zoopla#readme",
   "dependencies": {
-    "superagent": "^2.1.0"
+    "superagent": "^3.5.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-core": "^6.11.4",
-    "babel-eslint": "^6.1.2",
-    "babel-jest": "^14.0.2",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-1": "^6.5.0",
-    "codeclimate-test-reporter": "^0.3.3",
-    "coveralls": "^2.11.12",
-    "eslint": "^3.2.0",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.12.0",
-    "jest-cli": "^14.0.1",
-    "rimraf": "^2.5.4"
+    "babel-cli": "6.24.1",
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "20.0.1",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-1": "6.24.1",
+    "codeclimate-test-reporter": "0.4.1",
+    "coveralls": "2.13.1",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb-base": "11.1.3",
+    "eslint-config-prettier": "2.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "husky": "0.13.3",
+    "jest-cli": "20.0.1",
+    "lint-staged": "3.4.1",
+    "np": "2.14.1",
+    "prettier": "1.3.1",
+    "rimraf": "2.6.1"
   },
   "jest": {
-    "collectCoverage": "true"
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](dist|docs|node_modules|scripts)[/\\\\]"
+    ]
   }
 }

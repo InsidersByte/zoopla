@@ -1,27 +1,26 @@
 import superagent from 'superagent';
 
-class HttpClient {
-    get({ url, query }) {
-        let request = superagent.get(url);
+const execute = request =>
+  new Promise((resolve, reject) => {
+    request.end((error, response) => {
+      if (error) {
+        return reject(error);
+      }
 
-        if (query) {
-            request = request.query(query);
-        }
+      return resolve(response);
+    });
+  });
 
-        return this.execute(request);
-    }
+const get = ({ url, query }) => {
+  let request = superagent.get(url);
 
-    execute(request) {
-        return new Promise((resolve, reject) => {
-            request.end((error, response) => {
-                if (error) {
-                    return reject(error);
-                }
+  if (query) {
+    request = request.query(query);
+  }
 
-                return resolve(response);
-            });
-        });
-    }
-}
+  return execute(request);
+};
 
-export default new HttpClient();
+export default {
+  get,
+};
